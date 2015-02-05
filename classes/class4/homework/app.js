@@ -1,3 +1,4 @@
+//requires
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -20,15 +21,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//all pages
 app.get('/', index.home);
 
-app.get('/ingredients', ingredients.ingredientsGET);
-app.post('/ingredients', ingredients.ingredientsPOST);
+app.get('/ingredients', ingredients.home);
+app.post('/editIngr', ingredients.editIngr);
+app.post('/addIngr', ingredients.addIngr);
 
-app.get('/order', order.orderGET);
-app.post('/order', order.orderPOST);
+app.get('/order', order.home);
+app.post('/submitOrder', order.submit);
 
-app.get('/kitchen', kitchen.kitchenGET);
-app.post('/kitchen', kitchen.kitchenPOST);
+app.get('/kitchen', kitchen.home);
+app.post('/doneOrder', kitchen.done);
 
 app.listen(3000)
