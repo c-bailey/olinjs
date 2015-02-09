@@ -12,6 +12,10 @@ var order = require('./routes/order.js');
 
 var app = express();
 
+//connect to database
+var mongoURI = process.env.MONGOURI || "mongodb://localhost/test";
+mongoose.connect(mongoURI);
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 

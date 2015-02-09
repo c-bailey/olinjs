@@ -1,13 +1,13 @@
 var routes = {};
 
-routes.orderGET = function(req, res) {
-  console.log(req.query);
-  res.end(".");
-};
+var mongoose = require('mongoose');
+var Ingredient = require('../models/ingredientModel.js')
+var Order = require('../models/orderModel.js')
 
-routes.orderPOST = function(req, res) {
-  console.log(req.body);
-  res.end(".");
-};
+routes.order = function(req, res){
+	Ingredient.find({}).exec(function(err, allingrd) {
+		res.render('order',{allingrd})
+	});
+}
 
 module.exports = routes;

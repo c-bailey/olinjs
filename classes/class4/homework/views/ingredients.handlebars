@@ -1,14 +1,17 @@
 <h1>Manage Ingredients</h1>
 
+<h2>Add ingredient</h2>
+<form id="ingrd-form" action="addIngr" method="POST">
+	Ingredient: <input type="text" name="ingredient"/>
+	Price: <input type="text" name="price"/>
+	<input type="submit" name="Add ingredient"/>
+</form>
+
+<h2>Ingredient List</h2>
 {{#each ingr}}
 
+<input type="submit" value="Out of Stock">
 {{/each}}
-<h2>AJAX request</h2>
-<form id="ajax-form" action="getCat" method="POST">
-  Name: <input type="text" name="name"/><br/>
-  <input type="radio" name="mood" value="happy" checked/>Happy<br/>
-  <input type="radio" name="mood" value="grumpy"/>Grumpy<br/>
-  <input type="submit" value="Submit">
-</form>
-<div id="result">
-</div>
+
+
+

@@ -1,12 +1,13 @@
 <h1>Order a burger!</h1>
 
-
-<h2>AJAX request</h2>
-<form id="ajax-form" action="getCat" method="POST">
+<form id="order-form" action="submitOrder" method="POST">
   Name: <input type="text" name="name"/><br/>
-  <input type="radio" name="mood" value="happy" checked/>Happy<br/>
-  <input type="radio" name="mood" value="grumpy"/>Grumpy<br/>
-  <input type="submit" value="Submit">
+
+  {{#each ingrds}}
+  	<input type="checkbox" name={{this.name}} value = {{this.price}} />
+  {{/each}}
+  
+  Total Cost: <div id="cost">0.00</div>
+
+  <input type="submit" value="Submit Order">
 </form>
-<div id="result">
-</div>

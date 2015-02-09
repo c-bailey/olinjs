@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 
 var orderSchema = mongoose.Schema({
-	ingredients = [Object]
-	ingredients = [Object]
+	customer = String,
+	ingredients = [Object],
+	cost = Number
 });
 
 module.exports = mongoose.model("Order", orderSchema);

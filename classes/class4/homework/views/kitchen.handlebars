@@ -1,12 +1,12 @@
 <h1>Manage Orders</h1>
 
+{{#each order}}
 
-<h2>AJAX request</h2>
-<form id="ajax-form" action="getCat" method="POST">
-  Name: <input type="text" name="name"/><br/>
-  <input type="radio" name="mood" value="happy" checked/>Happy<br/>
-  <input type="radio" name="mood" value="grumpy"/>Grumpy<br/>
-  <input type="submit" value="Submit">
+<form id="kitch-form" action="doneOrder" method="POST">
+  Customer: {{this.customer}}<br>
+  Ingredients: {{this.ingredients}}<br>
+  Cost: {{this.cost}}<br>
+  <input type="submit" value="Order Complete">
 </form>
-<div id="result">
-</div>
+
+{{/each}}
