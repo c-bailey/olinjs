@@ -29,7 +29,7 @@ routes.submitOrder = function(req, res){
 			console.log('problem saving order', err);
 		}
 	});
-	res.render('')
+	res.end();
 }
 
 module.exports = routes;

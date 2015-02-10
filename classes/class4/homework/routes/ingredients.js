@@ -14,7 +14,8 @@ routes.addIngr = function(req, res){
 	data = req.body;
 	ing = new Ingredient({
 		name: data.ingredient,
-		price: data.price
+		price: data.price,
+		stocked: true
 	});
 	ing.save(function (err) {
 		if (err) {
