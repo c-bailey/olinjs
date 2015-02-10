@@ -7,10 +7,14 @@
 	<input type="submit" value="Add ingredient"/>
 </form>
 
-<h2>Ingredient List</h2>
+<h2 id='in-list'>Ingredient List</h2>
 {{#each ingr}}
-{{this.name}} : {{this.price}}
-<input type="submit" value="Out of Stock">
+	<form id= "{{this.name}}" action="outStock" method="POST">
+	{{this.name}} : ${{this.price}}
+	<input type="submit" value="Out of Stock"/>
+	<input type="submit" value="Edit"/>
+	</form>
+	<br/>
 {{/each}}
 
 

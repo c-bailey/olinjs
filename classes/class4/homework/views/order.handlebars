@@ -4,10 +4,13 @@
   Name: <input type="text" name="name"/><br/>
 
   {{#each ingrds}}
-  	<input type="checkbox" name={{this.name}} value = {{this.price}} />
+  	{{this.name}}
+  	${{this.price}}
+  	<input type="checkbox" />
+  	<br>
   {{/each}}
   
-  Total Cost: <div id="cost">0.00</div>
+  Total Cost: $<div id="cost">0.00</div>
 
-  <input type="submit" value="Submit Order">
+  <input type="submit" value="Submit Order"/>
 </form>

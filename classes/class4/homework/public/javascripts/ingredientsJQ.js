@@ -1,8 +1,7 @@
 var $form = $("#ingrd-form");
 
 var onSuccess = function(data, status) {
-  var img = "<img src='"+data+"'/>";
-  $("#result").html(img);
+  $('#in-list').html("<p>Added!<p>");
 };
 
 var onError = function(data, status) {
@@ -11,9 +10,10 @@ var onError = function(data, status) {
 };
 
 $form.submit(function(event) {
+  console.log('submitted');
   event.preventDefault();
   formData = $form.serialize();
-  $.get("addIngr", formData)
+  $.get("/ingredients", formData)
     .done(onSuccess)
     .error(onError);
 });

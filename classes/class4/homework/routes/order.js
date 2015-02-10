@@ -6,7 +6,7 @@ var Order = require('../models/orderModel.js')
 
 routes.home = function(req, res){
 	Ingredient.find({}).exec(function(err, allingrd) {
-		res.render('order',allingrd)
+		res.render('order',{ingrds:allingrd});
 	});
 }
 

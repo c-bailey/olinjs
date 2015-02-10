@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', index.home);
 
 app.get('/ingredients', ingredients.home);
-// app.post('/editIngr', ingredients.editIngr);
+app.post('/outStock', ingredients.outStock);
 app.post('/addIngr', ingredients.addIngr);
 
 app.get('/order', order.home);
