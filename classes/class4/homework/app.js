@@ -34,11 +34,12 @@ app.get('/', index.home);
 app.get('/ingredients', ingredients.home);
 app.post('/outStock', ingredients.outStock);
 app.post('/addIngr', ingredients.addIngr);
+app.post('editIngr', ingredients.edit);
 
 app.get('/order', order.home);
 app.post('/submitOrder', order.submitOrder);
 
 app.get('/kitchen', kitchen.home);
-app.post('/doneOrder', kitchen.done);
+app.post('/doneOrder', kitchen.doneOrder);
 
 app.listen(3000)

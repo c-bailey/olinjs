@@ -10,7 +10,14 @@ routes.home = function(req, res){
 	});
 }
 
-routes.done = function(req, res){
+routes.doneOrder = function(req, res){
+	data = req.body;
+	console.log(data);
+	Order.findByIdAndRemove(data.id, null, function(err){
+		if (err) {
+			console.log('error removing order', err);
+		}
+	});
 	res.end();
 }
 

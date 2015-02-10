@@ -11,11 +11,11 @@ var ordError = function(data, status) {
 
 $( "input:checkbox" ).change(function() {
   if($(this).is(':checked')) {
-    money= parseInt(this.id)+parseInt($("#cost").html());
-    $("#cost").replaceWith(money);
+    money= parseFloat(this.id)+parseFloat($("#cost").html());
+    $("#cost").replaceWith('<div id="cost">' + money +'</div>');
   } else {
-    money= parseInt($("#cost").html())-parseInt(this.id);
-    $("#cost").replaceWith(money);
+    money= parseFloat($("#cost").html())-parseFloat(this.id);
+    $("#cost").replaceWith('<div id="cost">' + money +'</div>');
   }
 });
 
@@ -23,7 +23,7 @@ $ordForm.submit(function(event) {
   console.log('submitted');
   event.preventDefault();
   formData = $ordForm.serialize();
-  $.get("/order", formData)
+  $.post("/submitOrder", formData)
     .done(ordSuccess)
     .error(ordError);
 });

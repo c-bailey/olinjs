@@ -12,10 +12,17 @@ routes.home = function(req, res){
 
 routes.submitOrder = function(req, res){
 	var data=req.body;
+	console.log(data)
 	var chosenIngr=[];
 	for (key in data) {
 		if (data[key] == 'on') {
-			chosenIngr.push(key);
+			Ingredient.findById(key,function(err,found){
+				if (err) {
+					console.log('could not find');
+				} else {
+					chosenIngr.push(found.name);
+				}
+			});
 		}
 	};
 	console.log(chosenIngr);

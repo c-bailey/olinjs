@@ -1,12 +1,13 @@
 <h1>Manage Orders</h1>
+<div id="kitch">
+	{{#each order}}
 
-{{#each order}}
+	<form class="kitch-form" id="{{this.id}}" action="doneOrder" method="POST">
+	  Customer: {{this.customer}}<br>
+	  Ingredients: {{#each this.ingredients}} {{this}}, {{/each}} <br>
+	  Cost: ${{this.cost}}<br>
+	  <input id="{{this.id}}" type="submit" value="Order Complete">
+	</form>
 
-<form id="kitch-form" action="doneOrder" method="POST">
-  Customer: {{this.customer}}<br>
-  Ingredients: {{#each this.ingredients}} {{this}}, {{/each}} <br>
-  Cost: ${{this.cost}}<br>
-  <input type="submit" value="Order Complete">
-</form>
-
-{{/each}}
+	{{/each}}
+</div>

@@ -11,7 +11,7 @@ routes.home = function(req, res){
 }
 
 routes.addIngr = function(req, res){
-	data = req.body;
+	var data = req.body;
 	ing = new Ingredient({
 		name: data.ingredient,
 		price: data.price,
@@ -26,10 +26,28 @@ routes.addIngr = function(req, res){
 }
 
 routes.outStock = function(req, res){
-	console.log(req);
-	data=req.body;
-	console.log(data);
-	//Ingredient.findOne({})
+	var data=req.body;
+	var stockUp = false;
+	if (data.stocked == true) {
+		stockUp = false;
+	} else {
+		stockUp = true;
+	}
+	Ingredient.findByIdAndUpdate(data.id,{stocked: stockUp},null, function(err){
+		if (err) {
+			console.log('problem updating', err)
+		}
+	});
+	res.end();
+}
+
+routes.edit = function(req, res){
+	var data = req.body;
+	Ingredient.findByIdAndUpdate(data.id,{name: data.name, price: data.price},null, function(err){
+		if (err) {
+			console.log('problem updating', err)
+		}
+	});
 	res.end();
 }
 
