@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var orderSchema = mongoose.Schema({
 	customer: String,
-	ingredients: [Object],
+	ingredients: Array,
 	cost: Number
 });
 

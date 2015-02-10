@@ -17,12 +17,15 @@ routes.addIngr = function(req, res){
 		price: data.price
 	});
 	ing.save(function (err) {
-		if (err) console.log('problem saving ingredient', err);
+		if (err) {
+			console.log('problem saving ingredient', err);
+		}
 	});
 	res.end();
 }
 
 routes.outStock = function(req, res){
+	console.log(req);
 	data=req.body;
 	console.log(data);
 	//Ingredient.findOne({})

@@ -10,4 +10,26 @@ routes.home = function(req, res){
 	});
 }
 
+routes.submitOrder = function(req, res){
+	var data=req.body;
+	var chosenIngr=[];
+	for (key in data) {
+		if (data[key] == 'on') {
+			chosenIngr.push(key);
+		}
+	};
+	console.log(chosenIngr);
+	ord = new Order({
+		customer: data.name,
+		ingredients: chosenIngr,
+		cost: 0
+	})
+	ord.save(function (err) {
+		if (err) {
+			console.log('problem saving order', err);
+		}
+	});
+	res.render('')
+}
+
 module.exports = routes;
