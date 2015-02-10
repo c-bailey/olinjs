@@ -1,10 +1,13 @@
-//requires
+//module requires
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+//local requires
 var index = require('./routes/index');
 var ingredients = require('./routes/ingredients.js');
 var kitchen = require('./routes/kitchen.js');
@@ -29,13 +32,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', index.home);
 
 app.get('/ingredients', ingredients.home);
-app.post('/editIngr', ingredients.editIngr);
+// app.post('/editIngr', ingredients.editIngr);
 app.post('/addIngr', ingredients.addIngr);
 
 app.get('/order', order.home);
-app.post('/submitOrder', order.submit);
+// app.post('/submitOrder', order.submit);
 
 app.get('/kitchen', kitchen.home);
-app.post('/doneOrder', kitchen.done);
+// app.post('/doneOrder', kitchen.done);
 
 app.listen(3000)

@@ -4,12 +4,12 @@
 <form id="ingrd-form" action="addIngr" method="POST">
 	Ingredient: <input type="text" name="ingredient"/>
 	Price: <input type="text" name="price"/>
-	<input type="submit" name="Add ingredient"/>
+	<input type="submit" value="Add ingredient"/>
 </form>
 
 <h2>Ingredient List</h2>
 {{#each ingr}}
-
+{{this.name}} : {{this.price}}
 <input type="submit" value="Out of Stock">
 {{/each}}
 
