@@ -13,8 +13,8 @@
 	<form id= "{{this.id}}" action="outStock" method="POST">
 		Ingredient: <input type="text" name="ingredient" value="{{this.name}}"/>
 		Price: <input type="text" name="price" value="{{this.price}}"/>
-		<input type="submit" value="Out of Stock" formaction="outStock"/>
-		<input type="submit" value="Edit" formaction="edit"/>
+		<input id="stock" type="submit" value="Out of Stock" formaction="outStock"/>
+		<input id="ed" type="submit" value="Edit" formaction="edit"/>
 	</form>
 	<br/>
 {{/each}}

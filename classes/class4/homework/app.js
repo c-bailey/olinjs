@@ -39,6 +39,6 @@ app.get('/order', order.home);
 app.post('/submitOrder', order.submitOrder);
 
 app.get('/kitchen', kitchen.home);
-// app.post('/doneOrder', kitchen.done);
+app.post('/doneOrder', kitchen.done);
 
 app.listen(3000)

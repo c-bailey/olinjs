@@ -10,4 +10,8 @@ routes.home = function(req, res){
 	});
 }
 
+routes.done = function(req, res){
+	res.end();
+}
+
 module.exports = routes;

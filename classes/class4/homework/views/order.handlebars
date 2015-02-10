@@ -6,11 +6,11 @@
   {{#each ingrds}}
   	{{this.name}}
   	${{this.price}}
-  	<input type="checkbox" name="{{this.name}}" />
+  	<input id="{{this.price}}" type="checkbox" name="{{this.name}}" />
   	<br>
   {{/each}}
   
-  Total Cost: $<div id="cost">0.00</div>
+  Total Cost: $<div id="cost">0</div>
 
   <input type="submit" value="Submit Order"/>
 </form>
