@@ -1,18 +1,5 @@
 var mongoose = require('mongoose');
 
-var mongoURI = process.env.MONGOURI || "mongodb://localhost/test";
-mongoose.connect(mongoURI);
-
-var catSchema = mongoose.Schema({
-	name: String,
-	age: Number,
-	colors: [String]
-});
-
-var Cat = mongoose.model('Cat',catSchema);
-
-var names = ['Bob','Jack','Sandy','Sasha','Brendan','Phillly','Jen','Flufferton','Oprah'];
-var colopts = ['red','yellow','black','white','brown','orange','gray'];
 
 var home = function(req, res){
 	res.render("home", {"pages": [

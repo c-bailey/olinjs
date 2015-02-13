@@ -1,0 +1,23 @@
+<h1>Manage Ingredients</h1>
+
+<h2>Add ingredient</h2>
+<form id="ingrd-form" action="addIngr" method="POST">
+	Ingredient: <input type="text" name="ingredient"/>
+	Price: <input type="text" name="price"/>
+	<input type="submit" value="Add ingredient"/>
+</form>
+
+<div id='in-list'>
+<h2>Ingredient List</h2>
+{{#each ingr}}
+	<form id= "{{this.id}}" action="outStock" method="POST">
+		Ingredient: <input type="text" name="ingredient" value="{{this.name}}"/>
+		Price: <input type="text" name="price" value="{{this.price}}"/>
+		<input id="stock" type="submit" value="Out of Stock" formaction="outStock"/>
+		<input id="ed" type="submit" value="Edit" formaction="edit"/>
+	</form>
+	<br/>
+{{/each}}
+</div>
+
+
