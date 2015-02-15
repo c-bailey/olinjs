@@ -1,0 +1,13 @@
+
+<form id="add-form" action="addTwot" method="POST">
+  <input type="text" name="message"/><br/>
+  {{user}}
+  <input type="submit" value="Submit"/>
+</form>
+
+{{#each twot}}
+<div class="twot">
+{{this.message}}
+{{this.user}}
+</div>
+{{/each}}
