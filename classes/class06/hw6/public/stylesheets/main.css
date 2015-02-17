@@ -1,19 +1,61 @@
 body, head {
 	font-family: 'Robot', sans-serif;
+	max-width: 1024px;
+	margin: 0 auto;
 }
 
 .col1, .col2 {
 	float: left;
 	position: relative;
-	margin: 2.5%;
+	margin: 1%;
 }
 
 .col1 {
-	width: 50%;
+	width: 70%;
 }
 
 .col2 {
-	width: 35%;
+	width: 25%;
+}
+
+#add-form {
+	position: relative;
+	float: left;
+	width: 80%;
+	padding: 1em;
+	background-color: #CCC;
+}
+
+.field {
+	float: left;
+	width: 90%;
+	height: 3em;
+	margin: 0.25em;
+	padding: 0.25em;
+}
+
+.submit, #userID {
+	float: left;
+	font-size: 1.5em;
+	font-weight: 300;
+	margin: 0.25em;
+	vertical-align: middle;
+}
+
+.submit {
+	width: 25%;
+	height: 2em;
+}
+
+.trashButton {
+	position: absolute;
+	bottom: 0.25em;
+	left: 0.25em;
+}
+
+#userID {
+	margin-top: 1em;
+	float: right;
 }
 
 .twot {
@@ -24,6 +66,7 @@ body, head {
 	padding: 1em;
 	background-color: #CCC;
 	font-size: 1.25em;
+	height: 3em;
 }
 
 .twot-m {
@@ -50,13 +93,22 @@ body, head {
 .logButton {
 	position: relative;
 	float: left;
-	width: 30%;
-	margin: 1em 35%;
+	width: 50%;
+	margin: 1em 25%;
+	background-color: #CCC;
+	height: 2em;
+	font-size: 1.5em;
+	font-weight: 200;
 }
 
 .userButton {
 	width: 80%;
+	margin: 0.2em 10%;
 	position: relative;
 	float: left;
+	background-color: #CCC;
+	height: 2em;
+	font-size: 1.5em;
+	font-weight: 200;
 }
 

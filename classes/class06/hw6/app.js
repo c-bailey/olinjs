@@ -27,10 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //all pages
 app.get('/', index.home);
-app.get('/login', index.logIn);
+app.get('/logIn', index.logIn);
 app.post('/logUser', index.logUser);
 app.post('/logOut', index.logOut);
 app.post('/addTwot', index.addTwot);
-//app.post('/highlight', index.highlight);
+app.post('/delTwot', index.delTwot);
 
 app.listen(3000)

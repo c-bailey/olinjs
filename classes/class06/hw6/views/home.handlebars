@@ -1,8 +1,8 @@
 <div class='col1'>
 	<form id="add-form" action="addTwot" method="POST">
-	  <input type="text" name="message"/><br/>
+	  <input class="field" type="text" name="message"/><br/>
+	  <input class="submit" type="submit" value="Submit"/>
 	  <div id="userID">{{mainUser.username}}</div>
-	  <input type="submit" value="Submit"/>
 	</form>
 
 	<div class='twot-list'>
@@ -10,6 +10,9 @@
 		<div class="twot {{this.author}}">
 		<div class="twot-m">{{this.message}}</div>
 		<div class="twot-a">{{this.author}}</div>
+		{{#if this.mine}}
+			<button type="button" class='trashButton' id='{{this.id}}'>X</button>
+		{{/if}}
 		</div>
 		{{/each}}
 	</div>
