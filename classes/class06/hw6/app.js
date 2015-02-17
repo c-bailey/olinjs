@@ -27,8 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //all pages
 app.get('/', index.home);
-app.get('/login', index.login);
+app.get('/login', index.logIn);
+app.post('/logUser', index.logUser);
 app.post('/addTwot', index.addTwot);
-app.post('/highlight', index.highlight);
+//app.post('/highlight', index.highlight);
 
 app.listen(3000)

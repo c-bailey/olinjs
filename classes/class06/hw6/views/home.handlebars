@@ -1,13 +1,29 @@
+<div class='col1'>
+	<form id="add-form" action="addTwot" method="POST">
+	  <input type="text" name="message"/><br/>
+	  <div id="userID">{{mainUser.username}}</div>
+	  <input type="submit" value="Submit"/>
+	</form>
 
-<form id="add-form" action="addTwot" method="POST">
-  <input type="text" name="message"/><br/>
-  {{user}}
-  <input type="submit" value="Submit"/>
-</form>
-
-{{#each twot}}
-<div class="twot">
-{{this.message}}
-{{this.user}}
+	<div class='twot-list'>
+		{{#each twot}}
+		<div class="twot">
+		{{this.message}}
+		{{this.user}}
+		</div>
+		{{/each}}
+	</div>
 </div>
-{{/each}}
+
+<div class='col2'>
+	<div class='logButton'>
+		{{logVal}}
+	</div>
+	
+	{{#each user}}
+	<div class='username {{this.username}}'>
+	{{this.username}}
+	</div>
+	{{/each}}
+	
+</div>

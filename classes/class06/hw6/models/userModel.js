@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
-	name: String,
-	twots: Array
+	username: String,
+	logged: Boolean
 });
 
 module.exports = mongoose.model("User", userSchema);
