@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', index.home);
 app.get('/login', index.logIn);
 app.post('/logUser', index.logUser);
+app.post('/logOut', index.logOut);
 app.post('/addTwot', index.addTwot);
 //app.post('/highlight', index.highlight);
 

@@ -11,9 +11,9 @@ routes.home = function(req, res){
 			qu.findOne(function (err, mU) {
 				if (err) return handleError(err);
 				if (!mU) {
-					res.render('home',{mainUser:'Anonymous',twot:alltwot,logValue:'Log In',user:allusers});
+					res.render('home',{mainUser:'Anonymous',twot:alltwot,logVal:'Log In',user:allusers});
 				} else {
-					res.render('home',{mainUser:mU,twot:alltwot,logValue:'Log Out',user:allusers});
+					res.render('home',{mainUser:mU,twot:alltwot,logVal:'Log Out',user:allusers});
 				}
 			});
 		});

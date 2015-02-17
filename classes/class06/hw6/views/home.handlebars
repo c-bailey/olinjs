@@ -7,23 +7,19 @@
 
 	<div class='twot-list'>
 		{{#each twot}}
-		<div class="twot">
-		{{this.message}}
-		{{this.user}}
+		<div class="twot {{this.author}}">
+		<div class="twot-m">{{this.message}}</div>
+		<div class="twot-a">{{this.author}}</div>
 		</div>
 		{{/each}}
 	</div>
 </div>
 
 <div class='col2'>
-	<div class='logButton'>
-		{{logVal}}
-	</div>
+	<button type="button" class='logButton'>{{logVal}}</button>
 	
 	{{#each user}}
-	<div class='username {{this.username}}'>
-	{{this.username}}
-	</div>
+	<button type="button" class='userButton'>{{this.username}}</button>
 	{{/each}}
 	
 </div>

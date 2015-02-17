@@ -1,8 +1,8 @@
 var $addForm = $("#add-form");
 var $logForm = $("#log-form");
 var $list = $(".twot-list");
-var $logIn = $("#log-in");
-var $logOut = $('#log-out')
+var $logger = $('.logButton');
+var $highlighter = $('.userButton');
 
 var Success = function(data, status) {
   console.log('Successful Form Submission');
@@ -14,7 +14,7 @@ var Error = function(data, status) {
 };
 
 var adder = function(twot) {
-  $list.append('<div class="twot">' + twot.message + twot.user + '</div>');
+  $list.prepend('<div class="twot">' + twot.message + twot.user + '</div>');
 };
 
 $addForm.submit(function(event) {
@@ -23,7 +23,7 @@ $addForm.submit(function(event) {
   $.each($addForm.serializeArray(), function(i, field) {
     formData[field.name] = field.value;
   });
-  formData[user] = $("#userID");
+  formData[author] = $("#userID").text();
   console.log(formData);
   $.post("/addTwot", formData).done(Success).error(Error);
   adder(formData);
@@ -39,6 +39,25 @@ $logForm.submit(function(event) {
   $.post("/logUser", logData).done(Success).error(Error);
   $.get("/", logData).done(Success).error(Error);
 });
+
+$logger.click(function(event) {
+  event.preventDefault();
+  if ($logger.text() == "Log Out") {
+    $.post('/logOut',{}).done(Success).error(Error);
+  } else if ($logger.text() == "Log In") {
+    $.get('/logIn',{}).done(Success).error(Error);
+  } else {
+    console.log('Unexpected Log Button value');
+    console.log($logger.text());
+  }  
+});
+
+$highlighter.click(function(event) {
+  event.preventDefault();
+  highClass = '.' + $(this).text();
+  $('.twot').removeClass('high');
+  $(highClass).addClass('high');
+})
 
 // $logOut.onClick(function(event) {
 //   $logOut.replaceWith('<a href="/login" id="log-in">Log In</a>');
